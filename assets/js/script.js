@@ -1,6 +1,6 @@
 var city;
-
-const APIKEY = "e78cada811c8675dd1bb60b68aa5f2d0";
+// API Key
+const APIKey = "";
 
 var getWeatherData = function() {
     
@@ -9,6 +9,9 @@ var getWeatherData = function() {
     fetch(queryURL).then(function(response) {
         response.json().then(function(data) {
             displayTemp(data, city);
+            console.log(city);
         })
     })
 }
+
+getWeatherData();
