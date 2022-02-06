@@ -13,14 +13,16 @@ var getWeatherData = function(city) {
     })
     .then(function(data) {
         console.log(data);
+        console.log(data.dt);
         console.log(data.main.temp);
         console.log(data.main.humidity);
         console.log(data.name);
         console.log(data.wind.speed);
         console.log(data.weather[0].icon);
-        var HTML = `<h1>${data.name}<span>${data.weather[0].icon}</span></h1>
+        var HTML = `<h1>${data.name}<span><img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="icon" ></span></h1>
         <h2>Temp: ${data.main.temp}F</h2>
-        <h2>Humidity: ${data.main.humidity}%</h2>`
+        <h2>Humidity: ${data.main.humidity}%</h2>
+        <h2>Wind Speed: ${data.wind.speed}mph</h2>`
         weatherContainer.innerHTML= HTML
     })
     
